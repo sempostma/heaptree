@@ -21,5 +21,8 @@
     "structures"
   ],
   "author": "Sem Postma",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^25.2.7"
+  }
 }

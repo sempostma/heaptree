@@ -16,10 +16,12 @@ class Heap {
      * @param {comparator} comparator 
      */
     constructor(items, comparator) {
-        this.comparator = typeof comparator === 'function' ? comparator : ((b, a) => b - a)
-        if (Array.isArray(items)) this.push(...items)
-        else this.items = []
-        this.length = this.items.length
+        this.comparator = typeof comparator === 'function' ? comparator : ((a, b) => a - b)
+        this.length = 0
+        this.items = []
+        if (Array.isArray(items)) {
+            this.push(...items)
+        }
     }
 
     /**
@@ -58,7 +60,10 @@ class Heap {
      */
     pop() {
         if (arguments.length !== 0) throw new SyntaxError(`Expected 0 arguments for .pop() but received ${arguments.length}.`)
-        if (this.items.length <= 1) return this.items.pop();
+        if (this.items.length <= 1) {
+            this.length = 0
+            return this.items.pop();
+        }
         const ret = this.items[0];
         this.items[0] = this.items.pop();
         let i = 0;
@@ -104,11 +109,12 @@ class Heap {
      * @returns {Heap} The new Heap
      */
     concat(...heaps) {
+        const newHeap = this.clone()
         for (let j = 0; j < heaps.length; j++) {
             const heap = heaps[j];
-            this.push(...heap.items);
+            newHeap.push(...heap.items);
         }
-        this.length = this.items.length
+        return newHeap
     }
 
     /**
@@ -128,7 +134,7 @@ class Heap {
     }
 
     /**
-     * Returns a deep copy of the heap
+     * Copies the heap and the internal array, references to items inside the array are not deeply cloned.
      * @returns {Heap} Deep copy
      */
     clone() {
