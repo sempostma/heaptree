@@ -1,0 +1,25 @@
+{
+  "name": "heaptree",
+  "version": "1.1.0",
+  "description": "A heap tree/priority queue implementation.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sempostma/heaptree.git"
+  },
+  "homepage": "https://github.com/sempostma/heaptree",
+  "bugs": {
+    "url": "https://github.com/sempostma/heaptree/issues",
+    "email": "heaptree@esstudio.nl"
+  },
+  "keywords": [
+    "heaptree",
+    "priority",
+    "queue",
+    "heap",
+    "data",
+    "structures"
+  ],
+  "author": "Sem Postma",
+  "license": "MIT"
+}
