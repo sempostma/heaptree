@@ -12,4 +12,7 @@ npm i --save heaptree
 
 Refer to jsdoc documentation
 
+## License
+
+MIT
 
