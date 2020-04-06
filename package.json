@@ -1,6 +1,6 @@
 {
   "name": "heaptree",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A heap tree/priority queue implementation.",
   "main": "index.js",
   "repository": {
